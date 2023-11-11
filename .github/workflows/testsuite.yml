@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v16  # Verwenden Sie Node.js 16
+      uses: actions/setup-node@v3  # Verwenden Sie Node.js 16
 
     - name: Install Dependencies
       run: npm install
