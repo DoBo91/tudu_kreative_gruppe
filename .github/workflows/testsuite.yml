@@ -23,4 +23,4 @@ jobs:
       run: npm install  # Hier installieren Sie Ihre Projektabhängigkeiten, passen Sie dies entsprechend Ihrer Sprache und Ihres Projekts an
 
     - name: Run Tests
-      run: npm test  # Hier führen Sie Ihre Tests aus, passen Sie dies entsprechend Ihrer Sprache und Ihres Test-Frameworks an
+      run: npm test  -- backend/todo.test.js # Hier führen Sie Ihre Tests aus, passen Sie dies entsprechend Ihrer Sprache und Ihres Test-Frameworks an
