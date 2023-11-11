@@ -3,24 +3,24 @@ name: testsuite
 on:
   push:
     branches:
-      - main  # Ändern Sie dies entsprechend Ihrem Hauptzweig
+      - main
   pull_request:
     branches:
-      - main  # Ändern Sie dies entsprechend Ihrem Hauptzweig
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Verwenden Sie die neueste verfügbare Ubuntu-Laufzeitumgebung
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2  # Stellt sicher, dass das Repository im Arbeitsverzeichnis verfügbar ist
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4  # Setzt die Node.js-Umgebung auf
+      uses: actions/setup-node@v16  # Verwenden Sie Node.js 16
 
     - name: Install Dependencies
-      run: npm install  # Hier installieren Sie Ihre Projektabhängigkeiten, passen Sie dies entsprechend Ihrer Sprache und Ihres Projekts an
+      run: npm install
 
     - name: Run Tests
-      run: npm test  -- backend/todo.test.js # Hier führen Sie Ihre Tests aus, passen Sie dies entsprechend Ihrer Sprache und Ihres Test-Frameworks an
+      run: npm test -- backend/todo.test.js
