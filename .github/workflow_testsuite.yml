@@ -1,0 +1,26 @@
+name: workflow_testsuite
+
+on:
+  push:
+    branches:
+      - main  # Ändern Sie dies entsprechend Ihrem Hauptzweig
+  pull_request:
+    branches:
+      - main  # Ändern Sie dies entsprechend Ihrem Hauptzweig
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Verwenden Sie die neueste verfügbare Ubuntu-Laufzeitumgebung
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2  # Stellt sicher, dass das Repository im Arbeitsverzeichnis verfügbar ist
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4  # Setzt die Node.js-Umgebung auf
+
+    - name: Install Dependencies
+      run: npm install  # Hier installieren Sie Ihre Projektabhängigkeiten, passen Sie dies entsprechend Ihrer Sprache und Ihres Projekts an
+
+    - name: Run Tests
+      run: npm test  # Hier führen Sie Ihre Tests aus, passen Sie dies entsprechend Ihrer Sprache und Ihres Test-Frameworks an
